@@ -8,5 +8,5 @@ for frame in win.frames():
     frame.draw()
     frame.add_big_str(
         (1, 1), str_image
-    ) #Рисуем картинку на всё поле
+    ) #Рисуем картинку на весь холст
     frame.update()
