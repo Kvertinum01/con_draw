@@ -1,11 +1,11 @@
 from setuptools import setup
 
-version = "0.2.0"
+version = "0.1.0"
 
 setup(
-    name="vkuserbot",
+    name="con_draw",
     author="Kvertinum01",
-    url="https://github.com/Kvertinum01/vkuserbot",
+    url="https://github.com/Kvertinum01/con_draw",
     description="Framework for drawing in console",
     version=version,
     packages=["con_draw"],
