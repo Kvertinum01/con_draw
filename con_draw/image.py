@@ -16,8 +16,8 @@ class Image:
         if resize is None:
             resize = self.image.size
         else:
-            if self.auto_correct:
-                resize = (resize[0], resize[1] // 2)
+            resize = (resize[0], resize[1] // 2) \
+                if self.auto_correct else resize
         width, height = resize
         image = self.image.resize((width, height))
         image = image.convert("L")
