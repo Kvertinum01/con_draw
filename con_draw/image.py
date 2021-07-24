@@ -1,3 +1,6 @@
+from typing import Tuple, Optional
+
+
 class Image:
     """
     Класс для преобразования обычного изображания в ASCII символы
@@ -7,9 +10,15 @@ class Image:
         from PIL import Image
         self.image = Image.open(path)
         self.chars = list(chars)
+        self.auto_correct = True
 
-    def load(self, resize=None):
-        width, height = self.image.size if resize is None else resize
+    def load(self, resize: Optional[Tuple[int, int]]=None):
+        if resize is None:
+            resize = self.image.size
+        else:
+            if self.auto_correct:
+                resize = (resize[0], resize[1] // 2)
+        width, height = resize
         image = self.image.resize((width, height))
         image = image.convert("L")
         pix = image.getdata()
