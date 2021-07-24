@@ -32,7 +32,7 @@ class Frame:
         line = self.result[position[1]-1]
         line_start = line[:position[0]-1]
         line_end = line[len(string)+position[0]-1:]
-        self.result[position[1]-2] = line_start + string + line_end
+        self.result[position[1]-1] = line_start + string + line_end
         return self.result
 
     def add_big_str(
@@ -50,7 +50,7 @@ class Frame:
             string = strings[ind]
             line_start = line[:position[0]-1]
             line_end = line[len(string)+position[0]-1:]
-            self.result[position[1]-2+ind] = line_start + string + line_end
+            self.result[position[1]-1+ind] = line_start + string + line_end
         return self.result
 
     def add_list(

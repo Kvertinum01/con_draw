@@ -25,8 +25,5 @@ class Drawer:
 
     def frames(self, pause=.4) -> Generator[Frame, None, None]:
         while self.drawing:
-            try:
-                yield Frame(self)
-                time.sleep(pause)
-            except KeyboardInterrupt:
-                break
+            yield Frame(self)
+            time.sleep(pause)
